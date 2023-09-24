@@ -1,0 +1,170 @@
+@import 'css/custom/_required.scss';
+
+.menu {
+}
+
+.mobile {
+  position: relative;
+  width: 100vw;
+
+  .nav {
+    border-top: $border-width solid $dark-border-color;
+  }
+}
+
+.desktop {
+  max-height: 100vh;
+  max-width: $menu-lg;
+  min-width: $menu-lg;
+  position: fixed !important;
+  transition: $transition-base;
+  z-index: $zindex-fixed;
+
+  & + div {
+    margin-left: $menu-lg;
+    transition: $transition-base;
+    width: calc(100vw - #{$menu-lg});
+
+    :global(.position-fixed) {
+      left: $menu-lg;
+      width: calc(100vw - #{$menu-lg});
+      transition: $transition-base;
+    }
+  }
+
+  &[data-collapse="true"] {
+    max-width: $menu-sm;
+    min-width: $menu-sm;
+
+    & + div {
+      margin-left: $menu-sm;
+      transition: $transition-base;
+      width: calc(100vw - #{$menu-sm});
+
+      :global(.position-fixed) {
+        left: $menu-sm;
+        width: calc(100vw - #{$menu-sm});
+      }
+    }
+  }
+
+  :global(hr) {
+    margin-left: 0;
+    transition: $transition-base;
+  }
+
+  &[data-collapse="false"] {
+    :global(hr) {
+      margin-left: 30px;
+      width: calc(100% - 30px);
+    }
+  }
+}
+
+.branding {
+  align-items: center;
+  display: flex;
+  flex-grow: 0;
+  min-height: $header-height;
+  margin: 0;
+
+  & > a {
+    display: flex;
+    position: relative;
+  }
+
+  @include desktop {
+    margin: 0 $interface-header-padding-x;
+    width: $menu-lg;
+  }
+}
+
+.logo {
+  transition: $transition-base;
+
+  &.lg {
+    opacity: 1;
+
+    *[data-collapse="true"] & {
+      opacity: 0;
+    }
+  }
+
+  &.sm {
+    left: 0 !important;
+    margin-left: $logo-offset;
+    opacity: 0;
+    position: absolute !important;
+
+    *[data-collapse="true"] & {
+      opacity: 1;
+    }
+  }
+}
+
+.scrollboxOuter {
+  border-top: $border-width solid transparentize($white, .9);
+  max-height: calc(100vh - #{$header-height});
+  min-height: calc(100vh - #{$header-height});
+}
+
+.scrollboxInner {
+  flex-direction: column;
+}
+
+.scrollboxTray {
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.footer {
+  @include gradient-y(transparentize($primary, 1), $primary, 0%, 12.5%);
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  padding: $menu-padding-y * 2 $menu-padding-x-lg $menu-padding-y;
+  transition: $transition-base;
+  width: $menu-lg;
+
+  *[data-collapse="true"] & {
+    align-items: center;
+    padding: $menu-padding-y $menu-padding-x-sm;
+    width: $menu-sm;
+  }
+}
+
+.toggleButton {
+  color: $secondary !important;
+
+  @include hover {
+    color: $white !important;
+  }
+}
+
+.addButton {
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 20px;
+  position: relative;
+
+  :global(.btn-label) {
+    @include collapseHide {
+      position: absolute;
+      white-space: nowrap;
+    }
+  }
+
+  :global(.sprite) {
+    @include collapseShow;
+  }
+}
+
+.copyright {
+  @include collapseHide();
+  @extend %caption;
+  margin-top: $menu-padding-y;
+  min-width: $menu-lg - $menu-padding-x-lg * 2;
+}

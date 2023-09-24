@@ -1,0 +1,117 @@
+@import 'css/custom/_required.scss';
+
+.label {
+  color: $text-label;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  margin-bottom: 0;
+  text-transform: none;
+}
+
+.value {
+  align-items: center;
+  display: flex;
+  margin-left: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  line-height: $line-height-base * $font-size-base;
+  padding: 10px 0;
+  position: relative;
+}
+
+.border {
+  &:not(:first-child) {
+    border-top: $border-width solid $border-color;
+    margin-top: - $border-width;
+  }
+
+  h3 + & {
+    border-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  :global(.col-24) + :global(.col-24) > &:first-child {
+    @include media-breakpoint-down($mobile-breakpoint-down) {
+      border-top: $border-width solid $border-color;
+      margin-top: - $border-width;
+    }
+  }
+}
+
+.adjustment {
+  align-items: center;
+  color: $text-label;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  top: 0;
+
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    right: -20px;
+    width: 4px;
+  }
+
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    left: calc(100% + 5px + #{$grid-gutter-width/2});
+    padding: 0 $grid-gutter-width/2;
+    width: calc(100% + 5px);
+  }
+
+  &:before {
+    @include pseudo-element;
+    height: 100%;
+    left: 0;
+    width: 4px;
+  }
+
+  & > div {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+
+    @include media-breakpoint-down($mobile-breakpoint-down) {
+      display: none;
+    }
+  }
+
+  &.negative {
+    background: transparentize($danger, .9);
+
+    &:before {
+      background: $danger;
+    }
+  }
+
+  &.positive {
+    background: transparentize($success, .9);
+
+    &:before {
+      background: $success;
+    }
+  }
+}
+
+.adjustmentContainer {
+  align-items: center;
+  display: flex;
+}
+
+.pillAboveBelow {
+  .value {
+    display: flex;
+    justify-content: space-between;
+    min-width: 135px;
+  }
+
+  :global(.badge) {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bolder;
+    letter-spacing: 1px;
+    line-height: $line-height-base * $font-size-base;
+    text-transform: uppercase;
+    width: 56px;
+  }
+}

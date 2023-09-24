@@ -1,0 +1,32 @@
+@import 'css/custom/_required.scss';
+
+.column {
+  background-color: $white;
+  border-right: $border-width solid $border-color;
+  padding-top: 10.5rem;
+  max-width: $summary-width !important;
+  min-width: $summary-width !important;
+  transition: $transition-base;
+  z-index: $zindex-sticky + 1;
+}
+
+.header {
+  border-bottom: $border-width solid $border-color;
+  max-width: $summary-width - $border-width !important;
+  min-width: $summary-width - $border-width !important;
+  padding: $table-padding-y $table-padding-x-sm;
+  position: fixed;
+  top: $header-height;
+  transition: $transition-base;
+}
+
+.body {
+  border-bottom: $border-width solid $border-color;
+  padding-left: 0;
+  margin-left: $table-padding-x-sm;
+  max-width: $summary-width - $table-padding-x-sm - $border-width !important;
+  min-height: 6.8rem;
+  min-width: $summary-width - $table-padding-x-sm - $border-width !important;
+  transition: $transition-base;
+  z-index: 0;
+}

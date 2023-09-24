@@ -1,0 +1,11 @@
+@import 'css/custom/_required.scss';
+
+.label {
+  *[data-collapse="true"] & {
+    text-align: center;
+    &:before {
+      content: " ";
+      white-space: pre;
+    }
+  }
+}

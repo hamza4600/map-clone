@@ -1,0 +1,10 @@
+@import 'css/custom/_required.scss';
+
+.page {
+  :global(.page-body) {
+    &, & > main {
+      max-width: inherit !important;
+      width: auto !important;
+    }
+  }
+}

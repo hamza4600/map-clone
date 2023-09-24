@@ -1,0 +1,15 @@
+@import 'css/custom/_required.scss';
+
+.input {
+  @include media-breakpoint-up(md) {
+    max-width: 10rem;
+  }
+}
+
+.auto {
+  line-height: $btn-height;
+
+  &.disabled {
+    color: $extra-light !important;
+  }
+}

@@ -1,0 +1,84 @@
+@import 'css/custom/_required.scss';
+
+$number-width: calc(#{$grid-gutter-width} + 4rem);
+
+.row {
+  @include desktop {
+    margin: (-$border-width) 0;
+    padding: 0 2rem;
+    transition: $transition-base;
+
+    &:hover {
+      box-shadow: $box-shadow;
+      background: $white;
+      position: relative;
+      z-index: $zindex-sticky -1;
+    }
+  }
+}
+
+.inner {
+  transition: $transition-base;
+
+  @include desktop {
+    border-bottom: 1px solid $border-color;
+    border-top: 1px solid $border-color;
+
+    &:hover {
+      border-color: transparent;
+    }
+  }
+}
+
+.innerRow {}
+
+.cols {
+}
+
+.col {}
+
+.number {
+  @include mobile {
+    border-bottom: 1px solid $border-color;
+    font-size: $font-size-lg;
+    margin: 0 -.75rem 1.5rem;
+    padding: 0 1.5rem 1.5rem !important;
+    min-width: 100%;
+
+    &:before {
+      content: "#";
+    }
+  }
+
+  @include desktop {
+    display: flex;
+    line-height: 2rem;
+    flex-grow: 0 !important;
+    max-width: $number-width !important;
+    min-width: $number-width !important;
+    padding: 1.5rem $grid-gutter-width/2;
+  }
+}
+
+.cols {}
+
+.actions {
+  display: flex;
+  max-height: 5rem;
+
+  @include mobile {
+    border-top: 1px solid $border-color;
+    justify-content: space-around;
+  }
+
+  @include desktop {
+    flex-grow: 0 !important;
+
+    @for $i from 1 through 6 {
+      &.actions-#{$i} {
+        max-width: 32px * $i + $grid-gutter-width;
+        min-width: 32px * $i + $grid-gutter-width;
+      }
+    }
+  }
+}

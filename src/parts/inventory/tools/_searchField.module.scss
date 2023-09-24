@@ -1,0 +1,43 @@
+@import 'css/custom/_required.scss';
+
+%clear-styles {
+  background: transparent !important;
+  border-color: transparent !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.group {
+  margin: 0;
+  padding: 0;
+
+  :global(.input-group-text) {
+    @extend %clear-styles;
+  }
+
+  :global(.input-group-append) {
+    position: absolute;
+
+    :global(.input-group-text) {
+      height: $btn-height;
+    }
+  }
+}
+
+.field {
+  position: relative;
+  z-index: 1;
+
+  &, &.empty, :global(.form-control-focus) > & {
+    &, & + :global(.input-group-append) > :global(.input-group-text) {
+      @extend %clear-styles;
+    }
+  }
+
+  &:focus,
+  &:not(.empty) {
+    & ~ :global(.input-group-append) {
+      opacity: 0;
+    }
+  }
+}

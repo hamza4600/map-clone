@@ -1,0 +1,19 @@
+.form-label {
+  @include caption;
+
+  color: $input-color !important;
+  font-size: $caption-size !important;
+  line-height: $caption-line-height !important;
+
+  &.input-label-unstyled {
+    color: $body-color !important;
+    font-size: $input-font-size !important;
+    letter-spacing: inherit !important;
+    line-height: inherit !important;
+    text-transform: none !important;
+
+    &:before, &:after {
+      display: none !important;
+    }
+  }
+}

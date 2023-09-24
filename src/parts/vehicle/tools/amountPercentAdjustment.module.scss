@@ -1,0 +1,56 @@
+@import 'css/custom/_required.scss';
+
+.container {
+  position: relative;
+}
+
+.adjustment {
+  position: absolute;
+  top: 0;
+
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    right: -20px;
+    width: 4px;
+  }
+
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    left: calc(100% + 5px + #{$grid-gutter-width/2});
+    padding: 0 $grid-gutter-width/2;
+    width: calc(100% + 5px);
+  }
+
+  &:before {
+    @include pseudo-element;
+    height: 100%;
+    left: 0;
+    width: 4px;
+  }
+
+  & > div {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+
+    @include media-breakpoint-down($mobile-breakpoint-down) {
+      display: none;
+    }
+  }
+
+  &:global(.primary) {
+    &:before {
+      background-color: $danger;
+    }
+  }
+
+  &:global(.danger) {
+    &:before {
+      background: $danger;
+    }
+  }
+
+  &:global(.success) {
+    &:before {
+      background: $success;
+    }
+  }
+}

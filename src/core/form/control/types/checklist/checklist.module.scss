@@ -1,0 +1,77 @@
+@import 'css/custom/_required.scss';
+
+.checklist {
+  width: 100%;
+}
+
+.row {
+  font-size: $input-font-size;
+  height: 100%;
+  margin: 0 (-$input-padding-x);
+
+  &.sm {
+    margin: 0 (-$input-padding-x-sm);
+  }
+
+  &.horizontal {
+    @include media-breakpoint-up(md) {
+      &.start {
+        justify-content: flex-start;
+      }
+
+      &.end {
+        justify-content: flex-end;
+      }
+
+      &.between {
+        justify-content: space-between;
+      }
+
+      .col {
+        flex-basis: auto;
+        flex-grow: unset;
+        width: auto;
+      }
+    }
+  }
+
+  &.vertical {
+    flex-direction: column;
+  }
+
+  &:not(.vertical):not(.columns):not(.fullWidth) {
+    max-width: $input-max-width + $form-grid-gutter-width;
+
+    @include media-breakpoint-down($mobile-breakpoint-down) {
+      max-width: $input-max-width + $form-grid-gutter-width-mobile;
+    }
+  }
+}
+
+.col {
+  padding: 0 $input-padding-x;
+
+  &.sm {
+    padding: 0 $input-padding-x-sm;
+  }
+
+  @include media-breakpoint-down(sm) {
+    &.control {
+      &:not(:last-child) {
+        margin-bottom: $form-grid-gutter-width/2;
+      }
+    }
+  }
+
+  &.vertical {
+    &.control {
+      &:not(:last-child) {
+        margin-bottom: $form-grid-gutter-width/2;
+      }
+    }
+  }
+
+  &.hide {
+    display: none;
+  }
+}

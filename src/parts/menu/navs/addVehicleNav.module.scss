@@ -1,0 +1,70 @@
+@import 'css/custom/_required.scss';
+
+.nav {
+  @include mobile {
+    flex-wrap: nowrap;
+    padding: 0 $menu-padding-x-mobile/2;
+  }
+}
+
+.item {
+  @include mobile {
+    flex-basis: auto;
+    flex-shrink: 0;
+    margin-left: calc(#{$sprite-size-lg} + #{$menu-padding-x-mobile});
+  }
+}
+
+.link {
+  @include mobile {
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  *[data-collapse="true"] & {
+    font-size: $font-size-sm;
+  }
+}
+
+.complete {
+  color: $accent;
+
+  @include mobile {
+    @include hover {
+      color: $accent;
+    }
+  }
+
+  @include desktop {
+    @include before {
+      background: $accent;
+      left: 0;
+      height: 100%;
+      top: 0;
+      width: .4rem;
+    }
+  }
+}
+
+.label {
+  @include mobile {
+    white-space: nowrap;
+  }
+}
+
+.sprite {
+  border-radius: $sprite-size-lg;
+  left: calc(#{-$sprite-size-lg} - #{$menu-padding-x-mobile/2});
+  padding: ($sprite-size-lg - $sprite-size-md)/2;
+  position: absolute;
+
+  .current & {
+    background-color: $accent;
+    color: $white;
+  }
+
+  @include desktop {
+    display: none;
+  }
+}

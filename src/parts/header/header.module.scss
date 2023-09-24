@@ -1,0 +1,57 @@
+@import 'css/custom/_required.scss';
+
+.header {
+  background-color: $primary;
+  color: $white;
+  min-height: $header-height;
+  width: 100%;
+  z-index: $zindex-fixed;
+
+  * {
+    white-space: nowrap;
+  }
+}
+
+.container {
+  background-color: $primary;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: $zindex-fixed;
+}
+
+.branding {
+  align-items: center;
+  display: flex;
+  flex-grow: 0;
+  padding: 0 $menu-padding-x-mobile;
+
+  @include desktop {
+    padding: 0 $interface-header-padding-x;
+    width: $menu-lg;
+  }
+}
+
+.buttons {
+  display: flex;
+  margin-left: auto;
+
+  @include desktop {
+    & > * {
+      margin-left: $border-width;
+
+      @include before {
+        border-left: $dark-border-color solid $border-width;
+        left: -$border-width;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.subheader {
+  padding-top: $header-height;
+}

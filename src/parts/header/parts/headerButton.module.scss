@@ -1,0 +1,47 @@
+@import 'css/custom/_required.scss';
+
+.button {
+  border-radius: 0;
+  max-height: $header-height;
+  min-height: $header-height;
+
+  &.square {
+    max-width: $header-height;
+    min-width: $header-height;
+  }
+
+  @include hover {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+
+    @include desktop {
+      &:not(:global(.active)) {
+        background-color: transparent !important;
+        border-color: transparent !important;
+
+        :global(.sprite) {
+          color: $accent !important;
+        }
+      }
+    }
+  }
+
+  @include active {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+
+    @include desktop {
+      background-color: mix($black, $primary, 20%) !important;
+      border-color: mix($black, $primary, 20%) !important;
+    }
+  }
+
+  @include active {
+    background-color: $accent !important;
+    border-color: $accent !important;
+    box-shadow: none !important;
+    color: $white;
+  }
+}

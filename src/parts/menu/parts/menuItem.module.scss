@@ -1,0 +1,105 @@
+@import 'css/custom/_required.scss';
+
+.item {
+  max-width: 100%;
+  position: relative;
+
+  @include mobile {
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 0 $menu-padding-x-mobile/2;
+  }
+}
+
+.link {
+  align-items: center;
+  color: $white;
+  display: flex;
+  min-height: 100%;
+  justify-content: space-between;
+  padding: $menu-item-padding-y $menu-padding-x-lg;
+  text-transform: uppercase;
+
+  &.disabled {
+    color: $secondary;
+  }
+
+  *[data-collapse="true"] & {
+    justify-content: center;
+    padding: $menu-item-padding-y 0;
+  }
+
+  @include mobile {
+    align-items: baseline;
+    flex-direction: column;
+    padding: $menu-item-padding-y-mobile 0;
+  }
+
+  @include desktop {
+    :global(.sprite) {
+//      color: $secondary;
+//      transition: $transition-base;
+    }
+  }
+
+  @include hover {
+    color: $white;
+
+    &.disabled {
+      color: $secondary;
+    }
+
+    @include desktop {
+      &:not(.disabled):not(:global(.active)) {
+        background-color: transparentize($accent, .9);
+        color: $white;
+
+        :global(.sprite) {
+        }
+
+        :global(.badge) {
+          background-color: $accent;
+        }
+      }
+    }
+  }
+
+  &:global(.active) {
+    @include mobile {
+      color: $accent;
+
+      :global(.badge) {
+        background-color: $accent;
+        color: $white;
+      }
+
+      @include before {
+        background: $accent;
+        bottom: 0;
+        left: 0;
+        height: .4rem;
+        width: 100%;
+      }
+    }
+
+    @include desktop {
+      background-color: transparentize($accent, .9);
+
+      :global(.sprite) {
+      }
+
+      :global(.badge) {
+        background-color: transparent;
+        border-color: $white;
+      }
+
+      @include before {
+        background: $accent;
+        left: 0;
+        height: 100%;
+        top: 0;
+        width: .4rem;
+      }
+    }
+  }
+}

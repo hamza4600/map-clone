@@ -1,0 +1,15 @@
+@import 'css/custom/_required.scss';
+
+.formGroup {
+  max-width: 12rem;
+}
+
+.select {
+  :global(.form-control),
+  :global(.input-group-append) > :global(.input-group-text),
+  :global(.input-group-append) > :global(.input-group-text) svg {
+    background-color: transparent !important;
+    border-color: $primary !important;
+    color: $primary !important;
+  }
+}

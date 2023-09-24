@@ -1,0 +1,29 @@
+@import 'css/custom/_required.scss';
+
+.container {
+  display: flex;
+  justify-content: flex-start !important;
+  position: relative;
+  width: 100%;
+
+  *[data-collapse="true"] & {
+    justify-content: center !important;
+  }
+}
+
+.sprite {
+  margin-right: 10px;
+}
+
+.label {
+  left: $sprite-size-md + 10px;
+  position: absolute;
+  transition: $transition-base;
+
+  *[data-collapse="true"] & {
+    opacity: 0;
+  }
+}
+
+.sprite {
+}

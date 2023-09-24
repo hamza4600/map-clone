@@ -1,0 +1,286 @@
+@import 'css/custom/_required.scss';
+
+.btn {
+  align-items: center;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  max-height: $btn-height;
+  min-height: $btn-height;
+  -webkit-appearance:none;
+
+  @include hover {
+    color: inherit;
+  }
+
+  &.sm {
+    max-height: $btn-height-sm;
+    min-height: $btn-height-sm;
+  }
+
+  &.lg {
+    max-height: $btn-height-lg;
+    min-height: $btn-height-lg;
+  }
+
+  &.start {
+    &, & .label {
+      justify-content: flex-start;
+    }
+  }
+
+  &.end {
+    &, & .label {
+      justify-content: flex-end;
+    }
+  }
+
+  &.center {
+    &, & .label {
+      justify-content: center;
+    }
+  }
+
+  &.between {
+    justify-content: space-between;
+  }
+}
+
+.round {
+  border-radius: $btn-height/2;
+
+  &.sm {
+    border-radius: $btn-height-sm/2;
+  }
+
+  &.lg {
+    border-radius: $btn-height-lg/2;
+  }
+}
+
+.square {
+  max-width: $btn-height;
+  min-width: $btn-height;
+  padding-left: 0;
+  padding-right: 0;
+
+  &.sm {
+    max-width: $btn-height-sm;
+    min-width: $btn-height-sm;
+  }
+
+  &.lg {
+    max-width: $btn-height-lg;
+    min-width: $btn-height-lg;
+  }
+}
+
+.link {
+  border: 0 !important;
+  max-height: auto !important;
+  max-width: auto !important;
+  min-height: auto !important;
+  min-width: auto !important;
+  padding: 0 !important;
+}
+
+.label {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  .2 + & {
+    order: 1;
+  }
+
+  .1 + & {
+    order: 2;
+  }
+
+  :global(.badge) {
+    top: 0;
+  }
+}
+
+.sprite {
+  &:not(:last-child) {
+    &.1 {
+      margin-right: $btn-padding-x;
+      order: 1;
+
+      .sm & {
+        margin-right: $btn-padding-x-sm;
+      }
+
+      .lg & {
+        margin-right: $btn-padding-x-lg;
+      }
+
+      .link & {
+        margin-right: .8rem;
+      }
+    }
+
+    &.2 {
+      margin-left: $btn-padding-x;
+      order: 2;
+
+      .sm & {
+        margin-left: $btn-padding-x-sm;
+      }
+
+      .lg & {
+        margin-left: $btn-padding-x-lg;
+      }
+
+      .link & {
+        margin-left: .8rem;
+      }
+    }
+  }
+}
+
+
+// VARIANTS
+
+@mixin solid-button($color: $primary) {
+  background-color: $color;
+  border-color: $color;
+  color: $white;
+
+  @include hover {
+    box-shadow: 0px 4px 8px transparentize($color, .8);
+  }
+
+  @include active {
+    background-color: mix($black, $color, 20%);
+    border-color: mix($black, $color, 20%);
+    box-shadow: none;
+  }
+
+  @include disabled {
+    background-color: $input-disabled-bg;
+    border-color: $input-disabled-bg;
+    color: $input-disabled-color;
+    box-shadow: none;
+  }
+}
+
+@mixin outline-button($color: $primary) {
+  background-color: transparent;
+  border-color: $color;
+  color: $color;
+
+  @include hover {
+    background-color: mix($white, $color, 90%);
+  }
+
+  @include active {
+    background-color: mix($white, $color, 80%);
+  }
+
+  @include disabled {
+    background-color: transparent;
+    border-color: mix($white, $color, 80%);
+    color: mix($white, $color, 60%);
+    box-shadow: none;
+  }
+}
+
+@mixin link-button($color: $primary) {
+  background-color: transparent;
+  border: 0;
+  color: $color;
+  display: inline-flex;
+  line-height: inherit;
+  min-height: inherit;
+  min-width: inherit;
+  padding: 0;
+  text-decoration: none;
+
+  @include hover-focus {
+    background-color: transparent !important;
+    color: mix($black, $color, 30%) !important;
+  }
+
+  @include active {
+    background-color: transparent !important;
+    color: mix($black, $color, 50%) !important;
+  }
+
+  @include disabled {
+    background-color: transparent !important;
+    color: mix($white, $color, 20%) !important;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .#{$color} {
+
+    &.solid {
+      @include solid-button($value);
+    }
+
+    &.outline {
+      @include outline-button($value);
+    }
+
+    &.link {
+      @include link-button($value);
+    }
+  }
+}
+
+@each $color, $value in $colors {
+  .#{$color} {
+
+    &.solid {
+      @include solid-button($value);
+    }
+
+    &.outline {
+      @include outline-button($value);
+    }
+
+    &.link {
+      @include link-button($value);
+    }
+  }
+}
+
+.light {
+  &.solid {
+    color: $primary;
+  }
+}
+
+.white {
+
+  &.solid {
+    color: $primary;
+  }
+
+  &.outline {
+    @include hover {
+      color: $primary;
+    }
+
+    @include active {
+      color: $primary;
+    }
+
+    @include disabled {
+      color: $secondary;
+    }
+  }
+
+  &.link {
+    @include disabled {
+      color: $secondary;
+    }
+  }
+}

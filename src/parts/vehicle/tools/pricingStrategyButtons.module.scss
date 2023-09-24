@@ -1,0 +1,81 @@
+@import 'css/custom/_required.scss';
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    flex-direction: column;
+  }
+}
+
+.label {
+  align-items: center;
+  display: flex;
+  margin-right: 20px;
+
+  &.disabled {
+    color: $extra-light;
+  }
+}
+
+.row {
+  max-width: 512px;
+}
+
+.col {
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    padding: $form-grid-gutter-width/2;
+  }
+}
+
+.btn {
+  @extend %caption;
+  background: $input-bg;
+  border: $border-width solid $input-border-color;
+  color: $text-label;
+  height: 100%;
+  max-height: inherit;
+  min-height: 7.2rem;
+  padding: 1rem 1rem !important;
+  width: 100%;
+
+  &.active {
+    background: $white;
+    border-color: $accent;
+    color: $primary;
+  }
+
+  &.disabled {
+    color: $border-color;
+  }
+
+  .error & {
+    border-color: $danger !important;
+  }
+}
+
+.labelContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 5rem;
+}
+
+.sprite {
+  color: $secondary;
+
+  .active & {
+    color: $accent;
+  }
+
+  .disabled & {
+    color: $border-color;
+  }
+}
+
+.btnLabel {
+  display: block;
+  line-height: 1;
+  margin: .6rem 0 0;
+}

@@ -1,0 +1,18 @@
+@import 'css/custom/_required.scss';
+
+.header {
+  h2 {
+    color: $table-header-color;
+  }
+}
+
+.row {
+  background-color: $body-bg;
+  padding: $table-padding-y $table-padding-x;
+}
+
+.label {
+  align-items: flex-end;
+  display: flex;
+  height: 100%;
+}

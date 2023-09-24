@@ -1,0 +1,76 @@
+@import 'css/custom/_required.scss';
+
+@mixin editor-parts {
+  :global(.tox-editor-header),
+  :global(.tox-statusbar) {
+    @content;
+  }
+}
+
+@mixin editor-focus {
+  @include editor-parts {
+    opacity: 1;
+  }
+}
+
+.editor {
+  width: 100%;
+
+  :global(.tox-tinymce) {
+    background: $input-bg;
+    border: $input-btn-border-width solid $input-border-color;
+    border-radius: $input-border-radius !important;
+    transition: $transition-base;
+
+    &:hover {
+      @include editor-focus;
+      @extend %input-hover;
+    }
+
+    :global(.form-control-focus) & {
+      @include editor-focus;
+      @extend %input-focus;
+    }
+
+    :global(.form-control-empty) & {
+      @extend %input-empty;
+    }
+
+    :global(.form-control-error) & {
+      @extend %input-error;
+    }
+  }
+
+  @include editor-parts {
+    opacity: .35;
+    transition: $transition-base !important;
+  }
+}
+
+.plaintext {
+  @extend %input-plaintext;
+}
+
+.disabled, .readOnly {
+  border-radius: $input-border-radius;
+  border-style: solid;
+  border-width: $input-border-width;
+  padding: $input-padding-y $input-padding-x;
+}
+
+.disabled {
+  @extend %input-disabled;
+}
+
+.readOnly {
+  @extend %input-read-only;
+}
+
+:export {
+  color: $body-color;
+  fontFamily: $input-font-family;
+  fontSize: $body-size;
+  inputPadding: 0 $input-padding-x;
+  inputSize: $input-font-size;
+  placeholderColor: $input-placeholder-color;
+}

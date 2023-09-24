@@ -1,0 +1,21 @@
+@import 'css/custom/_required.scss';
+
+.uploadLabel {
+  &:not(.disabled):global(.input-label-unstyled) {
+    color: $secondary !important;
+  }
+}
+
+@include desktop {
+  .inline {
+    justify-content: flex-end;
+  }
+
+  .inlineGroup {
+    min-width: $input-max-width;
+  }
+}
+
+.labelBreak {
+  @include hidden-mobile;
+}

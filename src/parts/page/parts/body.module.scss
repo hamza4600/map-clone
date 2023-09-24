@@ -1,0 +1,10 @@
+@import 'css/custom/_required.scss';
+
+.body {
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 30px;
+  }
+}

@@ -1,0 +1,35 @@
+@import 'css/custom/_required.scss';
+
+.adjustment {
+  align-items: center;
+  color: $text-label;
+  display: flex;
+  height: 100%;
+
+  & > div {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  &:global(.primary) {
+    background: transparentize($primary, .9);
+  }
+
+  &:global(.danger) {
+    background: transparentize($danger, .9);
+  }
+
+  &:global(.success) {
+    background: transparentize($success, .9);
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+}
+
+.label {
+  margin-bottom: 0;
+}

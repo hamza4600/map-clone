@@ -1,0 +1,10 @@
+@import 'css/custom/_required.scss';
+
+.inline {
+  & > *:global(.form-col) {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: auto;
+  }
+}

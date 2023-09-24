@@ -1,0 +1,21 @@
+@import 'css/custom/_required.scss';
+
+.row {
+  justify-content: space-between;
+}
+
+.col {
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    max-width: calc(50% - 5px);
+  }
+}
+
+.header {
+  color: $secondary;
+}
+
+.additionsDeductions {
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    display: none;
+  }
+}

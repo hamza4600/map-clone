@@ -1,0 +1,50 @@
+@import 'css/custom/_required.scss';
+
+#filters {
+  #filter-groups {
+    & > div {
+      &:not(:last-child) {
+        border-bottom: $border-width solid $border-color;
+      }
+    }
+
+  }
+}
+
+.search {
+  margin-bottom: 20px;
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+.title {
+  flex-grow: 1;
+
+  &:not(.disabled) {
+    cursor: pointer;
+  }
+}
+
+.empty {
+  color: $light;
+}
+
+.disabled {
+  color: $extra-light;
+}
+
+.badge {
+  margin-left: 10px;
+}
+
+.container {
+  &:not(:first-child) {
+    border-top: $border-width solid $border-color;
+  }
+}
+
+.collapse {
+  padding-bottom: 15px;
+}

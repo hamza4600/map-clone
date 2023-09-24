@@ -1,0 +1,40 @@
+@import 'css/custom/_required.scss';
+
+.daysContainer {
+  background-color: $extra-light;
+  max-width: 100vw;
+  padding: $menu-padding-y-mobile/2 0;
+}
+
+.daysLabel {
+  color: $primary;
+  font-weight: $font-weight-bolder;
+  padding: 0 $menu-padding-x-mobile;
+}
+
+.daysNav {
+  flex-wrap: nowrap;
+  padding: 0 $menu-padding-x-mobile/2;
+}
+
+.daysItem {
+  padding: 0;
+}
+
+.daysLink {
+  border: $border-width solid transparent;
+  border-radius: $font-size-base * 1.75 + $border-width * 2;
+  color: $secondary;
+  line-height: 1.75;
+  padding: 0 $menu-padding-x-mobile/2;
+  white-space: nowrap;
+
+  @include hover {
+    color: $primary !important;
+  }
+
+  &:global(.active) {
+    border-color: $primary;
+    color: $primary;
+  }
+}

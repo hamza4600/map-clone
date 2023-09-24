@@ -1,0 +1,38 @@
+@import 'css/custom/_required.scss';
+
+.divider {
+  @include desktop {
+    border-right: $border-width solid $border-color;
+    margin: $form-group-margin-bottom/2 $form-grid-gutter-width/2 !important;
+  }
+}
+
+.col {
+  @include desktop {
+    max-width: $input-max-width + $form-grid-gutter-width;
+  }
+}
+
+.label, .number {
+  align-items: center;
+  display: flex;
+  min-height: $input-height;
+}
+
+.label {
+  color: $secondary;
+}
+
+.number {
+  color: $primary;
+
+  @include mobile {
+    justify-content: flex-end;
+  }
+}
+
+.disabled {
+  .label, .number {
+    color: $custom-control-label-disabled-color;
+  }
+}

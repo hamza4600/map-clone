@@ -1,0 +1,6 @@
+@each $color, $value in $theme-colors {
+  .badge-#{$color} {
+    color: $value;
+    background-color: transparentize($value, .9);
+  }
+}

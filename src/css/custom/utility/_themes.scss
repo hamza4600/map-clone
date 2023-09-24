@@ -1,0 +1,123 @@
+.theme-dark {
+  background-color: $dark-bg;
+  color: $dark-color;
+
+  h5, p {
+    color: $dark-muted;
+  }
+
+  a {
+    @include hover {
+      color: $white;
+    }
+  }
+
+  hr {
+    border-color: $dark-border-color;
+  }
+
+  .badge {
+    background: $dark-input-bg;
+    border: $border-width solid transparent;
+    line-height: $badge-height - $border-width * 2;
+  }
+
+  .btn {
+    color: $dark-btn-color;
+
+    @include hover {
+      box-shadow: none !important;
+    }
+  }
+
+  .btn-secondary {
+    background-color: transparentize($secondary, .8) !important;
+    border-color: transparent !important;
+    color: $dark-btn-color !important;
+
+    .sprite {
+      .fill {
+        fill: $dark-btn-color !important;
+      }
+
+      .stroke {
+        stroke: $dark-btn-color !important;
+      }
+    }
+
+    @include hover {
+      &:not(.inactive):not(:disabled) {
+        background-color: transparentize($secondary, .7) !important;
+        border-color: transparent !important;
+        color: $dark-btn-color !important;
+
+        .sprite {
+          .fill {
+            fill: $dark-btn-color !important;
+          }
+
+          .stroke {
+            stroke: $dark-btn-color !important;
+          }
+        }
+      }
+    }
+
+    &.active,
+    &:active {
+      background-color: transparentize($secondary, .6) !important;
+      border-color: transparent !important;
+      color: $dark-btn-color !important;
+
+      .sprite {
+        .fill {
+          fill: $dark-btn-color !important;
+        }
+
+        .stroke {
+          stroke: $dark-btn-color !important;
+        }
+      }
+    }
+  }
+
+  .form-control {
+  }
+
+  .form-label {
+    color: $secondary !important;
+  }
+
+  .form-control,
+  .input-group-text,
+  .form-check-sprite {
+    @mixin autofill {
+    }
+  }
+
+  .form-check {
+    .form-check-input {
+      &:not(:checked) {
+        & ~ .form-check-sprite {
+        }
+      }
+
+      &:checked {
+        & ~ .form-check-sprite {
+        }
+
+        & ~ .form-check-label {
+          color: $white !important;
+          font-weight: $font-weight-normal;
+        }
+      }
+    }
+  }
+
+  .input-group-text {
+  }
+
+  .text-muted {
+    color: $secondary !important;
+  }
+}

@@ -1,0 +1,32 @@
+@import 'css/custom/_required.scss';
+
+.nav {
+  @include mobile {
+    flex-wrap: nowrap;
+    padding: 0 $menu-padding-x-mobile/2;
+  }
+}
+
+.item {
+  @include mobile {
+    flex-basis: auto;
+    flex-shrink: 0;
+  }
+}
+
+.link {
+  @include mobile {
+    justify-content: center;
+    position: relative;
+  }
+
+  *[data-collapse="true"] & {
+    font-size: $font-size-sm;
+  }
+}
+
+.label {
+  @include mobile {
+    white-space: nowrap;
+  }
+}

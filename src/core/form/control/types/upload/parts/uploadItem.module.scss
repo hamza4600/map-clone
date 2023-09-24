@@ -1,0 +1,26 @@
+@import 'css/custom/_required.scss';
+
+.item {
+  display: flex;
+  font-size: $input-font-size;
+  justify-content: space-between;
+  line-height: $input-line-height;
+  padding: $input-padding-y 0;
+  width: 100%;
+
+  &:not(:last-child) {
+    padding-bottom: 0;
+  }
+}
+
+.label {
+  font-weight: $font-weight-bolder;
+
+  &:not(:last-child) {
+    margin-right: .8rem;
+  }
+
+  .error & {
+    color: $danger;
+  }
+}

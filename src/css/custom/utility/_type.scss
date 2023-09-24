@@ -1,0 +1,28 @@
+h1 {
+  line-height: $h1-line-height;
+}
+
+h2 {
+  line-height: $h2-line-height;
+}
+
+h3 {
+  font-weight: $font-weight-bolder;
+  line-height: $h3-line-height;
+}
+
+h4 {
+  line-height: $h4-line-height;
+}
+
+h5 {
+  line-height: $h5-line-height;
+}
+
+.desktop-linebreak {
+  display: none;
+
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    display: inline;
+  }
+}

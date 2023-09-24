@@ -1,0 +1,12 @@
+@import 'css/custom/_required.scss';
+
+.dropdown {
+}
+
+.menu {
+  z-index: $zindex-fixed + 1;
+
+  &, & *:global(.dropdown-menu-inner) {
+    border-radius: 0;
+  }
+}

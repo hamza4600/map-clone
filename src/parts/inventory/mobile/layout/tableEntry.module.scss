@@ -1,0 +1,12 @@
+@import 'css/custom/_required.scss';
+
+.entry {
+  background-color: $white;
+  border-top: $border-width solid $border-color;
+  padding-top: 8px;
+}
+
+.hr {
+  margin: 0 $table-padding-x;
+  width: auto;
+}

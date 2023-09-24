@@ -1,0 +1,35 @@
+@import 'css/custom/_required.scss';
+
+.form {
+  :global(.form-row) {
+    margin: 0;
+  }
+
+  :global(.form-col) {
+    padding: 0;
+  }
+
+  @include mobile {
+    padding: 0 $menu-padding-x-mobile;
+  }
+}
+
+:global(.input-group) > .control:global(.form-control) {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: $white;
+  font-size: $font-size-lg;
+  padding: 0;
+  width: 25rem;
+
+  &::placeholder {
+    color: $secondary !important;
+  }
+}
+
+:global(.input-group-prepend) > .prepend:global(.input-group-text) {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  line-height: 1.65;
+  padding-left: 0;
+}

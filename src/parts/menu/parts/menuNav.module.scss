@@ -1,0 +1,12 @@
+@import 'css/custom/_required.scss';
+
+.nav {
+  @include mobile {
+    border-top: $border-width solid $dark-border-color;
+    padding: 0 $menu-padding-x-mobile/2;
+  }
+
+  @include desktop {
+    flex-direction: column;
+  }
+}

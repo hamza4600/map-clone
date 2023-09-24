@@ -1,0 +1,17 @@
+@import 'css/custom/_required.scss';
+
+.right {
+  @include media-breakpoint-up(md) {
+    & > *:first-child {
+      max-width: inherit;
+    }
+
+    &:not(.fullWidth) > *:last-child {
+      max-width: $input-max-width + $form-grid-gutter-width;
+
+      @include mobile {
+        max-width: $input-max-width + $form-grid-gutter-width-mobile;
+      }
+    }
+  }
+}

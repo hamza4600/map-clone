@@ -1,0 +1,32 @@
+@import 'css/custom/_required.scss';
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.label {
+  color: $text-muted;
+  font-weight: $font-weight-lighter;
+  padding: 0 1rem 1rem 0;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+
+.column {
+  border-top: $border-width solid $border-color;
+  padding: 1rem 0;
+  text-transform: capitalize;
+}
+
+.link {
+  :global(.btn-label) {
+    text-transform: none;
+  }
+}
+
+.hide {
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    display: none;
+  }
+}

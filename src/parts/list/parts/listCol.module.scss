@@ -1,0 +1,43 @@
+@import 'css/custom/_required.scss';
+
+.row {
+  height: 100%;
+}
+
+.col {
+  display: flex;
+  line-height: 2rem;
+  min-height: 5rem;
+  padding: 1.5rem $grid-gutter-width/2;
+  word-break: break-word;
+
+  :global(.search-select) {
+    height: $btn-height-sm;
+    margin: -($btn-height-sm - 2.2rem)/2 0;
+
+    :global(.btn) {
+      height: $btn-height-sm - $border-width * 2;
+      padding: $btn-padding-y-sm $btn-padding-x-sm;
+    }
+  }
+
+  :global(.ampersand) {
+    display: none;
+  }
+
+  :global(.badge) {
+    margin: -.5rem 0;
+
+    @include desktop {
+      flex-grow: 1;
+    }
+  }
+}
+
+.label {
+  color: $text-muted;
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}

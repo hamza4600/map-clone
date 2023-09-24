@@ -1,0 +1,18 @@
+@import 'css/custom/_required.scss';
+
+.body {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10.5rem;
+}
+
+.container {
+  display: flex;
+}
+
+.row {
+  border-bottom: $border-width solid $border-color;
+  border-right: $border-width solid $border-color;
+  min-height: 6.8rem;
+  padding: 23px $table-padding-x-sm;
+}

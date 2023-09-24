@@ -1,0 +1,13 @@
+@import 'css/custom/_required.scss';
+
+.row {
+  margin-top: 30px !important;
+}
+
+.back {
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    flex-basis: auto;
+    flex-grow: 0;
+    width: auto;
+  }
+}

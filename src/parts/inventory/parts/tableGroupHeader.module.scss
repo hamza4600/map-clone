@@ -1,0 +1,21 @@
+@import 'css/custom/_required.scss';
+
+.header {
+  background-color: $white;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $table-padding-y $table-padding-x;
+}
+
+.title {
+  margin-bottom: 8px;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.subHeaders {
+  @extend %caption;
+  align-items: flex-end;
+  color: $text-label;
+  display: flex;
+}

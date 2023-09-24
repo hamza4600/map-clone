@@ -1,0 +1,43 @@
+@import 'css/custom/_required.scss';
+
+.checklist {
+  margin-left: 0;
+  margin-right: 0;
+
+  :global(.checklist-col) {
+    padding-left: 0;
+    padding-right: 0;
+
+    &:not(:last-child) {
+      border-bottom: $border-width solid $border-color;
+      margin-bottom: $form-grid-gutter-width/2 !important;
+      padding-bottom: $form-grid-gutter-width/2;
+    }
+  }
+}
+
+.group {
+  @include media-breakpoint-up(md) {
+    max-width: $full-width !important;
+  }
+}
+
+.toggle {
+  margin-left: 0;
+  margin-right: 0;
+  @include media-breakpoint-up(md) {
+    max-width: $full-width !important;
+    width: $full-width !important
+  }
+  div {
+    padding: 1rem 0.6rem !important;
+    flex-grow: 0;
+    flex-basis: 14%;
+  }
+  button {
+    border-radius: 10px;
+    padding: 0.3rem;
+    min-width: 37px;
+    font-size: 11px;
+  }
+}

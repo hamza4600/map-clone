@@ -1,0 +1,50 @@
+@import 'css/custom/_required.scss';
+
+.wrapper {
+  display: inline-block;
+}
+
+.tooltip {
+  margin: 0;
+
+  :global(.tooltip-inner) {
+    box-shadow: $box-shadow;
+  }
+
+  :global(.tooltip-inner) {
+    text-align: left;
+  }
+}
+
+@each $color, $value in $theme-colors {
+
+  $tooltip-bg: theme-color-level($color, $alert-bg-level);
+
+  .#{$color} {
+    :global(.tooltip-inner) {
+      background-color: $tooltip-bg;
+      color: theme-color-level($color, $alert-color-level);
+    }
+
+    &:global(.bs-tooltip-bottom) {
+      :global(.arrow):before {
+        border-bottom-color: $tooltip-bg;
+      }
+    }
+    &:global(.bs-tooltip-left) {
+      :global(.arrow):before {
+        border-right-color: $tooltip-bg;
+      }
+    }
+    &:global(.bs-tooltip-right) {
+      :global(.arrow):before {
+        border-left-color: $tooltip-bg;
+      }
+    }
+    &:global(.bs-tooltip-top) {
+      :global(.arrow):before {
+        border-top-color: $tooltip-bg;
+      }
+    }
+  }
+}

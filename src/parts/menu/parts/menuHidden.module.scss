@@ -1,0 +1,11 @@
+@import 'css/custom/_required.scss';
+
+.hidden {
+  opacity: 1;
+  transition: $transition-fade;
+
+  *[data-collapse="true"] & {
+    position: absolute;
+    opacity: 0;
+  }
+}

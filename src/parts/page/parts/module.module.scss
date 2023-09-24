@@ -1,0 +1,104 @@
+@import 'css/custom/_required.scss';
+
+.module {
+  background: $white;
+  border: $border-width solid $light;
+  padding: $module-padding-mobile;
+  position: relative;
+
+  &:before {
+    @include pseudo-element;
+    border-color: $gray-300 transparent transparent $gray-300;
+    border-style: solid;
+    border-width: 8px;
+    left: 0;
+    top: 0;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: $module-padding-mobile;
+  }
+
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    padding: $module-padding;
+  }
+
+  h3 {
+    margin: 0 0 $form-group-padding;
+
+    @include media-breakpoint-down($mobile-breakpoint-down) {
+      padding: $form-group-padding-mobile 0;
+    }
+  }
+
+  :global(.row) > div:not(:first-child) h3 {
+    @include media-breakpoint-down($mobile-breakpoint-down) {
+      margin-top: $form-group-padding;
+    }
+  }
+}
+
+.header {
+  color: $primary;
+  font-weight: $font-weight-normal;
+}
+
+.subheader {
+  margin-top: -$border-width;
+  padding: 1rem 0;
+
+  &:not(:first-child) {
+    margin-top: $line-height-base * $font-size-base + $module-padding-mobile - $border-width * 2;
+  }
+}
+
+.divider {
+  background: $border-color;
+  border-width: 0;
+  height: 1px;
+  margin-bottom: $module-padding-mobile;
+  margin-top: $module-padding-mobile;
+  width: 100%;
+
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    margin-bottom: $module-padding;
+    margin-top: $module-padding;
+  }
+
+  :global(.row) > & {
+    margin-left: $grid-gutter-width/2;
+    margin-right: $grid-gutter-width/2;
+  }
+
+  :global(.form-row) > &:not(.vertical) {
+    margin-bottom: $module-padding - $form-group-margin-bottom/2;
+    margin-left: $form-grid-gutter-width/2;
+    margin-top: $module-padding - $form-group-margin-bottom/2;
+    margin-right: $form-grid-gutter-width/2;
+
+    @include mobile {
+      margin-bottom: $module-padding-mobile - $form-group-margin-bottom/2;
+      margin-left: $form-grid-gutter-width-mobile/2;
+      margin-top: $module-padding-mobile - $form-group-margin-bottom/2;
+      margin-right: $form-grid-gutter-width-mobile/2;
+    }
+  }
+
+  &.vertical {
+    height: auto;
+    margin: -20px 0;
+    width: 1px;
+
+    @include media-breakpoint-down($mobile-breakpoint-down) {
+      display: none;
+    }
+
+    @include media-breakpoint-up($mobile-breakpoint-up) {
+      margin: -$module-padding 0;
+    }
+  }
+}
+
+.spacer {
+  padding-top: $line-height-base * $font-size-base + $module-padding-mobile;
+}

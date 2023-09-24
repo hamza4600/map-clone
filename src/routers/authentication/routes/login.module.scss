@@ -1,0 +1,43 @@
+@import 'css/custom/_required.scss';
+@import '../parts/card.module.scss';
+@import '../parts/footer.module.scss';
+
+.rememberMe {
+  .form-check-label {
+    color: $white;
+    text-transform: uppercase;
+  }
+}
+
+.buttons {
+  margin: 3rem 0 1rem;
+}
+
+.forgotPassword {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    color: $accent;
+    text-transform: uppercase;
+  }
+}
+
+.or {
+  align-items: center;
+  display: flex;
+  margin: 30px 0;
+
+  hr {
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  span {
+    @extend %caption;
+    background: $dark-input-bg;
+    border-radius: $badge-pill-border-radius;
+    padding: $badge-padding-y 6px;
+  }
+}

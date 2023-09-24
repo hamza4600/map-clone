@@ -1,0 +1,17 @@
+@import 'css/custom/_required.scss';
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+}
+
+.collapse {
+  overflow: hidden;
+  transition: $transition-base;
+  width: 0;
+
+  &.show {
+    width: $header-height + 25rem;
+  }
+}

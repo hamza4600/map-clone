@@ -1,0 +1,20 @@
+.bs-tooltip-top {
+  margin: $tooltip-margin 0 0;
+}
+
+.bs-tooltip-bottom {
+  margin: 0 0 $tooltip-margin;
+}
+
+.bs-tooltip-left {
+  margin: 0 $tooltip-margin 0 0;
+}
+
+.bs-tooltip-right {
+  margin: 0 0 0 $tooltip-margin;
+}
+
+.tooltip-inner {
+  font-weight: $font-weight-bolder;
+  text-align: left;
+}

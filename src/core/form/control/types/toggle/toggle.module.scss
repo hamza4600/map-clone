@@ -1,0 +1,17 @@
+@import 'css/custom/_required.scss';
+
+.outer {
+  width: 20rem;
+
+  &:not(.inline):not(.vertical):not(.columns):not(.fullWidth) {
+    @include media-breakpoint-up(md) {
+      max-width: $input-max-width + $form-grid-gutter-width;
+      width: $input-max-width + $form-grid-gutter-width;
+
+      @include mobile {
+        max-width: $input-max-width + $form-grid-gutter-width-mobile;
+        width: $input-max-width + $form-grid-gutter-width-mobile;
+      }
+    }
+  }
+}

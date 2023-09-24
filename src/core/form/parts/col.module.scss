@@ -1,0 +1,11 @@
+@import 'css/custom/_required.scss';
+
+.col {
+  &, :global(.form-row) > & {
+    padding: $form-group-margin-bottom/2 $form-grid-gutter-width/2;
+
+    @include mobile {
+      padding: $form-group-margin-bottom/2 $form-grid-gutter-width-mobile/2;
+    }
+  }
+}

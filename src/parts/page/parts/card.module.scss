@@ -1,0 +1,47 @@
+@import 'css/custom/_required.scss';
+
+.card {
+  background: transparentize($white, .3);
+  box-shadow: $box-shadow;
+  padding: 2rem;
+
+  &:not(:first-child) {
+    margin-top: 2rem;
+  }
+
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    padding: 2rem 3rem;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 2rem;
+}
+
+.title {
+  color: $primary;
+  font-weight: $font-weight-bold;
+  line-height: 4rem;
+}
+
+.tools {
+  :global(.btn):not(:global(.btn-square)) {
+    min-width: 14rem;
+  }
+
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    :global(.btn) {
+      display: inline-flex;
+    }
+  }
+}
+
+.divider {
+  border-top: $border-width solid $border-color;
+  height: 0;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}

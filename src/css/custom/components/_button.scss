@@ -1,0 +1,16 @@
+.btn-label {
+  text-transform: uppercase;
+}
+
+.btn-solid.btn-light {
+  @include hover {
+    background-color: mix($secondary, $light, 20%);
+    border-color: mix($secondary, $light, 20%);
+  }
+
+  @include active {
+    background-color: mix($black, $secondary, 20%);
+    border-color: mix($black, $secondary, 20%);
+    box-shadow: none;
+  }
+}

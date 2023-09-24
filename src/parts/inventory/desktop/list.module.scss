@@ -1,0 +1,13 @@
+@import 'css/custom/_required.scss';
+
+.index {
+  min-height: 172px;
+}
+
+.columnButton {
+  margin: 1.6rem;
+  position: fixed;
+  right: 0;
+  top: $header-height;
+  z-index: 1;
+}

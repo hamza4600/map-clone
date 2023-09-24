@@ -1,0 +1,50 @@
+@import 'css/custom/_required.scss';
+
+.toggle {
+  @include mobile {
+    border: 0;
+    flex-grow: 1;
+    min-height: $btn-height;
+    padding: 0;
+    width: 0 !important;
+  }
+
+  :global(.btn-label) {
+    text-transform: capitalize;
+
+    @include mobile {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  :global(.sprite) {
+    color: $secondary;
+
+    @include mobile {
+      margin-top: $font-size-base * $line-height-base;
+    }
+  }
+
+  &.active {
+    :global(.sprite) {
+      color: $accent;
+    }
+  }
+}
+
+.prefix{
+  color: $secondary;
+  margin-right: $btn-padding-x;
+}
+
+.name {
+  font-size: $font-size-lg;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.active {
+  color: $accent;
+}

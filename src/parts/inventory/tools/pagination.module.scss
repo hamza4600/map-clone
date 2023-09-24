@@ -1,0 +1,92 @@
+@import 'css/custom/_required.scss';
+
+.container {
+  display: flex;
+  width: 100%;
+
+  @include mobile {
+    position: inherit !important;
+  }
+
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    bottom: 0;
+    z-index: $zindex-sticky + 2;
+  }
+}
+
+.dataColumns {
+  background: $body-bg;
+  border-top: $border-color solid $border-width;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.pagination {
+  align-items: center;
+  margin: 0 (-$pagination-padding);
+  min-height: $pagination-height;
+}
+
+.item {
+  display: block;
+  margin: 0 $pagination-padding;
+
+  :global(.page-link) {
+    background-color: transparent;
+    border: 0;
+    color: $secondary;
+    font-weight: $font-weight-bold;
+    padding: 0;
+
+    &:hover {
+      color: darken($secondary, 10%);
+    }
+  }
+
+  &:global(.active) {
+    :global(.page-link) {
+      background-color: transparent;
+      color: $primary;
+    }
+  }
+}
+
+.ellipsis {
+  :global(.page-link) {
+    cursor: default;
+  }
+}
+
+.button {
+  :global(.page-link) {
+    border: $border-width solid $primary;
+    border-radius: 100% !important;
+    color: $primary;
+    font-size: 2rem;
+    min-height: 3rem;
+    min-width: 3rem;
+    text-align: center;
+
+    &:hover {
+      background-color: transparentize($secondary, .9);
+    }
+  }
+
+  &:first-child {
+    margin-right: $pagination-padding * 3;
+  }
+
+  &:last-child {
+    margin-left: $pagination-padding * 3;
+  }
+}
+
+.perPage {
+  :global(.form-control),
+  :global(.input-group-text) {
+    background: transparent;
+    border-color: $primary;
+    color: $primary;
+  }
+}

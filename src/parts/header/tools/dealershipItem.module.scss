@@ -1,0 +1,45 @@
+@import 'css/custom/_required.scss';
+
+.item {
+  background-color: transparent !important;
+  border: 0;
+  border-radius: 0 !important;
+
+  @include hover {
+    box-shadow: none !important;
+  }
+
+  :global(.btn-label) {
+    text-transform: capitalize;
+  }
+
+  @include mobile {
+    color: $secondary !important;
+    font-size: $font-size-lg;
+    padding: 0 $menu-padding-x-mobile;
+
+    &.active {
+      color: $white !important;
+
+      :global(.sprite) {
+        color: $accent;
+      }
+    }
+  }
+
+  @include desktop {
+    color: $body-color !important;
+
+    &.active {
+      background-color: $light !important;
+      color: $primary !important;
+      cursor: default;
+    }
+
+    &:not(.active) {
+      @include hover {
+        background-color: mix($white, $light, 90%) !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import 'css/custom/_required.scss';
+
+.badge {
+  height: $badge-height;
+  line-height: $badge-height;
+  transition: $transition-base;
+}
+
+.light,
+.extra-light {
+  color: $white;
+}

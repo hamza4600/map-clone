@@ -1,0 +1,7 @@
+@import 'css/custom/_required.scss';
+
+.uploadLabel {
+  &:global(.input-label-unstyled) {
+    color: $secondary !important;
+  }
+}

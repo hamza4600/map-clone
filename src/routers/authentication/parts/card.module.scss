@@ -1,0 +1,111 @@
+@import 'css/custom/_required.scss';
+
+$padding-sm-x: 10px;
+
+@mixin padding-x() {
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    padding-left: $padding-sm-x;
+    padding-right: $padding-sm-x;
+  }
+}
+
+.card {
+  max-width: 63rem;
+  width: 100%;
+
+  :global(.container) {
+    max-width: 38rem;
+  }
+
+  :global(.form-wrapper) {
+    margin-bottom: -10px !important;
+    margin-top: -10px !important;
+  }
+
+  :global(.form-group) {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    min-height: 100vh;
+  }
+
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    margin: 50px 0;
+  }
+}
+
+.header {
+  @include padding-x();
+
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+
+  :global(p) {
+    font-size: $font-size-lg;
+    margin-top: 4px;
+    margin-bottom: 0;
+  }
+}
+
+.body {
+  @include padding-x();
+}
+
+.footer {
+  @include padding-x();
+
+  border-top: $dark-border-color solid $border-width;
+}
+
+.logo {
+  margin-top: 30px;
+
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    margin-top: 10px;
+  }
+}
+
+.title {
+  color: $white;
+}
+
+.alerts {
+  margin-bottom: 3rem;
+}
+
+.terms {
+  @extend %caption;
+  text-align: center;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    text-align: left;
+  }
+}
+
+.copyright {
+  @extend %caption;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    flex-direction: column;
+
+    span:not(:last-child) {
+      margin-bottom: .8rem;
+    }
+  }
+}

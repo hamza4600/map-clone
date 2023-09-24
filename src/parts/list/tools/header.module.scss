@@ -1,0 +1,21 @@
+@import 'css/custom/_required.scss';
+
+.header {
+  align-items: center;
+  background: $white;
+  display: flex;
+  padding: 2rem 2rem 0;
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.tools {
+  display: flex;
+  margin-left: auto;
+
+  & > *:not(:first-child) {
+    margin-left: 2rem;
+  }
+}

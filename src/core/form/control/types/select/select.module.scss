@@ -1,0 +1,24 @@
+@import 'css/custom/_required.scss';
+
+.container {
+  background: transparent !important; // FIX
+  flex-grow: 1;
+  position: relative;
+
+  &:not(.vertical):not(.columns):not(.fullWidth) {
+    @include media-breakpoint-up(md) {
+      max-width: $input-max-width;
+    }
+  }
+}
+
+.show {
+  :global(.form-control),
+  :global(.input-group-append) :global(.input-group-text) {
+    @extend %input-focus;
+  }
+}
+
+.items {
+  padding: $input-padding-y 0;
+}

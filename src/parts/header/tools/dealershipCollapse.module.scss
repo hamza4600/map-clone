@@ -1,0 +1,19 @@
+@import 'css/custom/_required.scss';
+
+.tools {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $menu-item-padding-y-mobile/2 $menu-padding-x-mobile $menu-item-padding-y-mobile;
+}
+
+.addButton {
+  flex-shrink: 0;
+  margin-left: $menu-padding-x-mobile * 2;
+  max-width: $header-height * 3 - $menu-padding-x-mobile * 2;
+}
+
+.collapse {
+  border-top: $border-width solid $dark-border-color;
+  padding: $menu-item-padding-y-mobile 0;
+}

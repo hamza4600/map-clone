@@ -1,0 +1,34 @@
+@import 'css/custom/_required.scss';
+
+.container {
+  background-color: $white;
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px $table-padding-x;
+}
+
+.body {
+  color: inherit !important;
+  flex-grow: 1;
+
+  & > * {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 3px;
+    }
+
+    & > * {
+      &:not(:last-child) {
+        color: $text-muted;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.toggle {
+  font-size: $font-size-sm;
+  margin-left: $table-padding-x;
+}

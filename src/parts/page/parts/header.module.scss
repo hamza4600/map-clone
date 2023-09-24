@@ -1,0 +1,72 @@
+@import 'css/custom/_required.scss';
+
+.header {
+  background-color: transparentize($primary, .9);
+  padding: 1.4rem 2rem;
+  width: 100%;
+
+  @include desktop {
+    background-color: $white;
+    border-bottom: $border-width solid $border-color;
+    padding: 0 $interface-header-padding-x;
+  }
+
+  * {
+    white-space: nowrap;
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include mobile {
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    min-height: $header-height;
+  }
+}
+
+.title {
+  color: $primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bolder;
+  line-height: 2rem;
+}
+
+.divider {
+  background: transparentize($secondary, .8);
+  border: 0;
+  flex-shrink: 0;
+  height: 2rem;
+  margin: 0 2rem;
+  width: 1px;
+
+  @include hidden-mobile;
+}
+
+.break {
+  display: flex;
+  flex-basis: 100%;
+  padding-top: .5rem;
+
+  @include hidden-desktop;
+}
+
+.label {
+  color: $text-label;
+  margin-bottom: 0;
+
+  &:after {
+    content: " ";
+    white-space: pre;
+  }
+}
+
+.sprite {
+  color: $primary;
+  margin-right: 10px;
+}

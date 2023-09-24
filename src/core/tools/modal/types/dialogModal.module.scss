@@ -1,0 +1,79 @@
+@import 'css/custom/_required.scss';
+
+.dialog {
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0;
+  width: $modal-md;
+
+  &.xl {
+    justify-content: flex-start;
+    max-width: calc(100vw - #{$modal-padding * 2});
+    width: $modal-md;
+
+    :global(.modal-content) {
+      padding-bottom: $modal-padding;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: $modal-lg;
+    width: $modal-lg;
+
+    &.xl {
+      max-width: $modal-xl;
+      width: $modal-xl;
+    }
+  }
+
+  :global(.modal-content) {
+    box-shadow: $box-shadow;
+  }
+}
+
+.header {
+  flex-direction: column;
+  margin: 0;
+  padding: 5rem 5rem 0;
+}
+
+.graphic {
+  margin: 0 auto 2.4rem;
+}
+
+.title {
+  font-weight: $font-weight-bolder;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.body {
+  margin: 0 auto;
+  padding: 2.5rem 5rem;
+  text-align: center;
+
+  .xl & {
+    text-align: left;
+  }
+}
+
+.footer {
+  display: block;
+  margin: 0;
+  padding: 0 5rem 5rem;
+  width: 100%;
+
+  & > * {
+    margin: 0;
+  }
+}
+
+.buttons {
+  justify-content: space-around;
+}
+
+.close {
+  position: fixed;
+  right: $modal-padding;
+  top: $modal-padding;
+}

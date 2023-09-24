@@ -1,0 +1,13 @@
+@import 'css/custom/_required.scss';
+
+.button {
+  &.active {
+    &:not(:disabled) {
+      box-shadow: $toggle-active-box-shadow !important;
+    }
+  }
+
+  &.error {
+    border-color: $danger !important;
+  }
+}

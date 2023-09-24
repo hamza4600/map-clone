@@ -1,0 +1,85 @@
+@import 'css/custom/_required.scss';
+
+@mixin labelAbove {
+  padding-bottom: 0;
+
+  .label {
+    &.required {
+      &:after {
+        content: $label-required-indicator;
+      }
+    }
+  }
+}
+
+@mixin labelBefore {
+
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    @include labelAbove;
+  }
+
+  @include media-breakpoint-up($mobile-breakpoint-up) {
+    max-width: $label-width;
+
+    &.inline {
+      padding-right: 0;
+    }
+
+    .label {
+      align-items: center;
+      display: flex;
+      min-height: $input-height;
+
+      &.sm {
+        min-height: $input-height-sm;
+      }
+
+      &.required {
+        &:before {
+          content: $label-required-indicator;
+        }
+      }
+    }
+  }
+}
+
+.col {
+  &.before {
+    @include labelBefore;
+  }
+
+  &.above {
+    @include labelAbove;
+  }
+
+  &.columns {
+    @include media-breakpoint-down(lg) {
+      @include labelAbove;
+    }
+
+    @include media-breakpoint-up(xl) {
+      @include labelBefore;
+    }
+  }
+}
+
+.label {
+  color: $custom-control-label-color;
+  font-size: $input-font-size;
+  font-weight: $custom-control-label-weight;
+
+  &.plaintext{
+    min-height: inherit !important;
+  }
+
+  &.inline {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+  }
+
+  &.disabled {
+    color: $custom-control-label-disabled-color !important;
+  }
+}

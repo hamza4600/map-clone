@@ -1,0 +1,33 @@
+@import 'css/custom/_required.scss';
+
+%container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.outer {
+  @extend %container;
+}
+
+.inner{
+  @extend %container;
+
+  background: mix($white, $body-bg, 30%);
+}
+
+.rows {
+  @include desktop {
+    overflow: hidden;
+  }
+}
+
+.message {
+  align-items: center;
+  color: $text-muted;
+  display: flex;
+  flex-grow: 1;
+  font-style: italic;
+  justify-content: center;
+}

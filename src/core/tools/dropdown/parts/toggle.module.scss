@@ -1,0 +1,7 @@
+@import 'css/custom/_required.scss';
+
+.toggle {
+  &:after {
+    display: none; // fix for dropdown
+  }
+}

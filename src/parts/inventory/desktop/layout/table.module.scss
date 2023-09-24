@@ -1,0 +1,16 @@
+@import 'css/custom/_required.scss';
+
+.table {
+  display: flex;
+  flex-grow: 1;
+  padding-bottom: $pagination-height;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    padding-left: $summary-width;
+  }
+}

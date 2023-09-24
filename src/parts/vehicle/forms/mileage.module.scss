@@ -1,0 +1,78 @@
+@import 'css/custom/_required.scss';
+
+.mileageInfo {
+  background: transparentize($gray-300, .7);
+  border-radius: $border-radius;
+  color: $primary;
+  padding: 16px 20px;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 20px;
+  }
+
+  dl {
+    display: flex;
+    justify-content: space-between;
+    line-height: 16px;
+    margin-bottom: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  dt {
+    font-weight: $font-weight-normal;
+    opacity: .5;
+  }
+
+  dd {
+    margin-bottom: 0;
+  }
+}
+
+.divider {
+  margin-bottom: 2rem !important;
+  margin-top: 2rem !important;
+}
+
+.adjustment {
+  align-items: center;
+  background-color: transparentize($gray-300, .7);
+  border-radius: $border-radius;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  margin: 0;
+  padding: $input-padding-y $input-padding-x;
+
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    margin: $form-group-padding-mobile $form-group-padding-mobile/2;
+  }
+
+  dt {
+    font-weight: $font-weight-normal;
+    opacity: .6;
+  }
+
+  dd {
+    color: $primary;
+    margin-bottom: 0;
+  }
+
+  &.positive {
+    background-color: transparentize($success, .8);
+
+    dd {
+      color: $success;
+    }
+  }
+
+  &.negative {
+    background-color: transparentize($danger, .8);
+
+    dd {
+      color: $danger;
+    }
+  }
+}

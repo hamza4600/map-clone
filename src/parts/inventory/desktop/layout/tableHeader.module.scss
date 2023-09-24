@@ -1,0 +1,28 @@
+@import 'css/custom/_required.scss';
+
+.container {
+  display: flex;
+  position: fixed;
+  top: $header-height;
+}
+
+.header {
+  border-bottom: $border-width solid $border-color;
+  border-right: $border-width solid $border-color;
+  padding: $table-padding-y $table-padding-x-sm;
+  position: relative;
+
+  h2 {
+    color: $table-header-color;
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    width: calc(100% - #{$table-padding-x-sm * 2})
+  }
+}
+
+.label {
+  align-items: flex-end;
+  margin-top: 36px;
+  min-height: $font-size-sm * $line-height-sm * 2;
+}

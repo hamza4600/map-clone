@@ -1,0 +1,10 @@
+@import 'css/custom/_required.scss';
+
+.body {
+  background-color: $extra-light;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}

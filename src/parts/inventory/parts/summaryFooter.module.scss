@@ -1,0 +1,16 @@
+@import 'css/custom/_required.scss';
+
+.footer {
+  align-items: center;
+  background: $white;
+  border-right: $border-color solid $border-width;
+  border-top: $border-color solid $border-width;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 $table-padding-x-sm;
+  max-width: $summary-width;
+  min-height: $pagination-height;
+  min-width: $summary-width;
+  transition: $transition-base;
+  z-index: $zindex-sticky + 1;
+}

@@ -1,0 +1,25 @@
+@import 'css/custom/_required.scss';
+
+.checkbox {
+  :global(.form-check-label) {
+    color: $body-color !important;
+    font-weight: $font-weight-base !important;
+    white-space: normal;
+  }
+}
+
+.checklist {
+  :global(.checklist-col) {
+    &:nth-child(2) {
+      margin-left: $form-grid-gutter-width;
+    }
+  }
+}
+
+.toggle {
+  &.inline {
+    &.group {
+      width: 12rem;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import 'css/custom/_required.scss';
+
+.button {
+  @include mobile {
+    border-radius: 0 !important;
+    margin: (-1.2rem) (-1.2rem) 1.2rem;
+    min-width: 100vw;
+  }
+}

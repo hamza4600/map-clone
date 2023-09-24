@@ -1,0 +1,42 @@
+@import 'css/custom/_required.scss';
+
+.total {
+  padding: 18px 20px;
+
+  :global(.adjustment-values) {
+    @include media-breakpoint-up($mobile-breakpoint-up) {
+      font-size: $h3-font-size;
+      line-height: $h3-line-height;
+      padding: 10px;
+    }
+  }
+
+  :global(.adjustment-amount) {
+    font-weight: $font-weight-bold;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: $module-padding-mobile;
+  }
+}
+
+.header {
+  font-weight: $font-weight-normal;
+
+  :global(.primary) & {
+    color: $primary;
+  }
+
+  :global(.danger) & {
+    color: $danger;
+  }
+
+  :global(.success) & {
+    color: $success;
+  }
+
+  @include media-breakpoint-down($mobile-breakpoint-down) {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+  }
+}

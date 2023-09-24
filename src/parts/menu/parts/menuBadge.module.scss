@@ -1,0 +1,14 @@
+@import 'css/custom/_required.scss';
+
+.badge {
+  @include mobile {
+    margin-top: $menu-item-padding-y-mobile/4;
+  }
+
+  @include desktop {
+    @include collapseHide {
+      position: absolute;
+      right: $menu-padding-x-lg;
+    }
+  }
+}

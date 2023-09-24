@@ -1,0 +1,12 @@
+@import 'css/custom/_required.scss';
+
+.jobTitle {
+  color: $text-muted;
+  margin-left: 2rem;
+}
+
+.contactInfo {
+  display: flex;
+
+  @include hidden-mobile;
+}
